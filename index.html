@@ -18,8 +18,10 @@
 <body>
     <div id="app">
         <h1>Lista email</h1>
+        <button @click="getEmailAddress()">Genera 10 indirizzi random</button>
         <ul>
-            <li v-for="item in emailList">{{item}}</li>
+            <li v-if="emailList.lenght === numberEmail -1" v-for="item in emailList">{{item}}</li>
+            <li v-else=>Loading...</li>
         </ul>
     </div>
 
