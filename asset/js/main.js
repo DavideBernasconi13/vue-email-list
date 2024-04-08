@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            emailList: [],
             email: '',
             numberEmail: 10,
         }
@@ -15,6 +16,10 @@ createApp({
                     this.email = response.data.response;
                     console.log('la mail è', this.email);
                     listaMail.push(this.email);
+                    if (i === this.numberEmail - 1) {
+                        this.emailList = [...listaMail]
+                    }
+                    console.log(this.emailList);
                 })
             }
             console.log(listaMail);
